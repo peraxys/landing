@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/fraunces";
+
+@theme {
+  --font-sans: 'Geist Variable', 'Noto Sans Tamil', system-ui, sans-serif;
+  --font-display: 'Fraunces Variable', 'Noto Serif Tamil', Georgia, serif;
+  --color-paper: #fbf4f2;
+  --color-mist: #f3e6e4;
+  --color-ink: #25101f;
+  --color-ink-soft: #5d4657;
+  --color-peacock: #0b5d4f;
+  --color-peacock-deep: #07382f;
+  --color-rani: #c7255f;
+  --color-zari: #b8892b;
+  --color-line: rgb(37 16 31 / 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-rani);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Woven pattu border: peacock band, zari rules, diamond repeat. */
+.pattu {
+  height: 14px;
+  background:
+    linear-gradient(var(--color-zari), var(--color-zari)) top / 100% 1px no-repeat,
+    linear-gradient(var(--color-zari), var(--color-zari)) bottom / 100% 1px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Cpath d='M14 1 L21 7 L14 13 L7 7Z' fill='%23b8892b'/%3E%3Cpath d='M14 4 L18 7 L14 10 L10 7Z' fill='%23c7255f'/%3E%3C/svg%3E") repeat-x center,
+    var(--color-peacock);
+}
